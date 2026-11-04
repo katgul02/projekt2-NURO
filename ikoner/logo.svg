@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- NURO logo-mærke: To bløde sten som kapsler (koncept 4, form B – valgt 28/10). -->
+  <!-- Oprette, helt afrundede stave: læser som både pause-symbol og sten, ikke som blade. -->
+  <!-- Farver: mørk #2F3A36 + accentgrøn #3F5D51. Læser på lyse baggrunde og på blå header -->
+  <!-- (dusty blue #A3B8C9: mørk 5,76:1, accentgrøn 3,54:1). -->
+  <!-- Ordmærket NURO sættes ved siden af i mørk tekst #2F3A36. -->
+  <rect x="14" y="20" width="16" height="28" rx="8" fill="#2F3A36"/>
+  <rect x="34" y="23" width="16" height="22" rx="8" fill="#3F5D51"/>
+</svg>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="da">
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NURO-Giv hjernen en pause</title>
+
+    <link rel="stylesheet" href="/css/forside.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<header></header>
+
+<body>
+<main>
+    <!-- Forside -->
+     <section class="forside-sektion" aria-labelledby="forside-overskrift">
+        <div class="forside-indhold">
+            <p class="overtekst">Et lille pusterum i din dag</p>
+
+            <h1>Brug for en pause?</h1>
+            <p>Her kan du finde ro i 1-15 minutter. Vælg en pause der passer til dig.</p>
+        
+            <div class="forside-knapper">
+                <a href="/pauser.html" class="start-pause-knap">
+                    <img src="/img/ikoner/playknap-hvid.svg" alt="Start pause" class="play-knap">
+                    Start din pause</a>
+                
+                <a href="/pauser.html" class="mental-pause-knap">Hvad er en mental pause?</a>
+            </div>
+        </div>
+    </section>
+    
+
+     <!-- Pausevalg -->
+    <section class="pauser-sektion" aria-labelledby="pauser-overskrift">
+        <div class="pauser-indhold">
+            <h2>Vælg din pause</h2>
+            <p>Hvor lang tid har du?</p>
+
+            <ul class="pauser-kort" role="list">
+                <li>
+                    <a href="/pauser.html" class="pause-minutter">
+                    <img src="/img/ikoner/bladhvid.svg" alt="hvid blad" class="pause-ikon">
+                    <span class="pause-tid">1-5 min</span>
+                    <span class="pause-navn">Mikropause</span>
+                </a>
+                </li>
+
+                <li>
+                    <a href="/pauser.html" class="pause-minutter">
+                    <img src="/img/ikoner/lydhvid.svg" alt="hvid lydikon" class="pause-ikon">
+                    <span class="pause-tid">5-10 min</span>
+                    <span class="pause-navn">Kort pause</span> 
+                </a>
+                </li>
+
+                <li>
+                    <a href="/pauser.html" class="pause-minutter">
+                    <img src="/img/ikoner/moonhvid.svg" alt="hvid moon" class="pause-ikon">
+                    <span class="pause-tid">10-15 min</span>
+                    <span class="pause-navn">Dyb ro</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Citat -->
+    <aside class="citat-sektion" aria-label="Citat">
+        <div class="citat-indhold">
+            <img src="/img/figur.svg" alt="Blå figur" class="citat-billede">
+        
+            <div class="citat-tekst-indhold">
+                <img src="/img/ikoner/citationstegn.svg" alt="citationstegn" class="citat-ikon">
+        
+                <blockquote>
+                    <p class="citat-tekst">Det er okay at holde pause.
+                    Alle har brug for ro i løbet af dagen</p>
+                </blockquote>
+                <p class="citat-person">- Pædagog på specialskole</p>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- Følelsesvælger -->
+    <section class="stemning-sektion" aria-labelledby="stemning-overskrift">
+        <h2 id="stemning-overskrift">Hvordan har du det i dag?
+        </h2>
+        <p id="stemning-help">Tryk på den, der passer. Du må gerne springe over.</p>
+
+            <!--skjulte radio knapper til at vælge kun én ting ad gangen -->
+
+            <!-- fieldset og legenend---- -->
+        <fieldset class="stemninger" aria-describedby="stemning-help">
+            <legend class="skjult">Vælg din stemning</legend>
+        
+            <input type="radio" name="stemning" id="glad" class="skjult-radio">
+            <label for="glad" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/glad.svg" alt="glad"></span>
+                <span class="stemning-tekst">Glad</span>
+
+                <span class="stemning-check" aria-hidden="true">✓</span>
+                <!-- ✓✓✓✓✓✓✓check check check✓✓✓✓✓✓✓✓ -->
+            </label>
+
+            <input type="radio" name="stemning" id="rolig" class="skjult-radio">
+            <label for="rolig" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/rolig.svg" alt="rolig"></span>
+                <span class="stemning-tekst">Rolig</span>
+                <span class="stemning-check" aria-hidden="true">✓</span>
+            </label>
+      
+            <input type="radio" name="stemning" id="urolig" class="skjult-radio">
+            <label for="urolig" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/urolig.svg" alt="urolig"></span>
+                <span class="stemning-tekst">Urolig</span>
+                <span class="stemning-check" aria-hidden="true">✓</span>
+            </label>
+
+            <input type="radio" name="stemning" id="okay" class="skjult-radio">
+            <label for="okay" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/okay.svg" alt="okay"></span>
+                <span class="stemning-tekst">Okay</span>
+                <span class="stemning-check" aria-hidden="true">✓</span>
+            </label>
+
+            <input type="radio" name="stemning" id="trist" class="skjult-radio">
+            <label for="trist" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/trist.svg" alt="trist"></span>
+                <span class="stemning-tekst">Trist</span>
+                <span class="stemning-check" aria-hidden="true">✓</span>
+            </label>
+
+            <input type="radio" name="stemning" id="traet" class="skjult-radio">
+            <label for="traet" class="stemnings-knapper">
+                <span class="ikon-cirkel"><img src="/img/ikoner/tireeed.svg" alt="traet"></span>
+                <span class="stemning-tekst">Træt</span>
+                <span class="stemning-check" aria-hidden="true">✓</span>
+            </label>
+        </fieldset>
+
+        <!-- Forslags boks der popper frem -->
+        <aside class="forslag" aria-labelledby="forslag-overskrift">
+            <div class="forslag-indhold">
+                <h3 class="forslag-label">FORSLAG TIL DIG</h3>
+                <p class="forslag-tekst">Når man er <strong>urolig</strong>, kan det hjælpe at trække vejret roligt.</p>
+            </div>
+
+            <a href="/pauser.html" class="forslag-knap">Prøv vejrtrækning</a>
+        </aside>
+    </section>
+
+
+    <!-- Sådan virker det -->
+    <section class="trin-sektion" aria-labelledby="trin-overskrift"> 
+        <div class="trin-indhold">
+            <h2>Sådan virker det.</h2>
+            <p>Tre rolige trin.</p>
+
+            <ol class="trin-kort" role="list">
+                <li class="trin">
+                    <span class="trin-cirkel">
+                        <img src="/img/ikoner/tryk.svg" alt="tryk">
+                    </span>
+                    <span class="trin-tekst">
+                        <span class="trin-nummer" aria-hidden="true">1.</span> Vælg pause
+                    </span>
+                </li>
+
+                <li class="trin">
+                    <span span class="trin-cirkel">
+                        <img src="/img/ikoner/cirkler.svg" alt="cirkler">
+                    </span>
+                    <span class="trin-tekst"><span
+                        span class="trin-nummer">2.</span> Følg øvelsen
+                    </span>
+
+                </li>
+
+                <li class="trin">
+                    <span class="trin-cirkel">
+                        <img src="/img/ikoner/retur.svg" alt="retur">
+                    </span>
+                    <span class="trin-tekst">
+                        <span class="trin-nummer">3.</span> Kom roligt tilbage
+                    </span>
+                </li>
+            </ol>
+        </div> 
+    </section>
+
+
+    <!-- Om NURO -->
+    <section class="om-nuro-sektion">
+        <div class="om-nuro-indhold">
+            <p class="overtekst">Din pause. Dit tempo.</p>
+
+            <h2>En pause kan være mange ting.</h2>
+            <p>Lyt, tegn eller vær stille et øjeblik. Du bestemmer, hvad der passer til dig, og må altid stoppe eller vælge om. NURO giver plads til, at dine pauser kan være forskellige.</p>
+
+            <!-- bruger detals tag til at åbne til "de voksne" afsnit-->
+            <details class="til-voksne">
+                <summary>Til voksne</summary>
+                <p> NURO er tænkt som et pædagogisk redskab til små pauser i skoledagen. Giv eleven tid til at vælge, og tilbyd hjælp, hvis der er brug for det. Pausen kan tilpasses sammen med en voksen.</p>
+            </details>
+        </div>
+    </section>
+</main>
+
+
+<footer></footer>
+
+
+</body>
+</html>

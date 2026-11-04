@@ -1,0 +1,608 @@
+/* mobile first approach */
+/* https://getbootstrap.com/docs/5.3/layout/breakpoints/ = 768px som standardværdi
+--> 768px=48rem */
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: "nunito sans", sans-serif;
+    background-color: #F7F5F0;
+    color: #2F3A36;
+}
+
+
+/* HEADER */
+
+
+/* generel styling */
+h1{
+  margin-bottom: 1rem;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+h2{
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+h3{
+  font-size: 20px;
+  line-height: 1.4;
+}
+p{
+  font-size: 20px;
+  line-height: 1.6;
+}
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a{
+  text-decoration: none;
+}
+/* synlig markering med tastatur */
+a:focus-visible{
+  outline: 0.25rem solid #2F3A36;
+  outline-offset: 0.25rem;
+}
+.overtekst{
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #3F5D51;
+  margin-bottom: 0.75rem;
+}
+@media screen and (min-width:769px){
+  h1{
+    font-size: 50px;
+  }
+  h2{
+    font-size: 35px;
+  }
+  p{
+    font-size: 24px;
+  }
+}
+/* Startside START */
+.forside-sektion{
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 1.5rem;
+  background:
+  radial-gradient(circle at 70% 10%, #a3b8c996 0px, transparent 450px),
+  radial-gradient(circle at 30% 70%, #b8c9b860 0px, transparent 500px),
+  radial-gradient(circle at 75% 100%, #d9cfc07c 0px, transparent 350px),
+  #b8c9b87a;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+/* bruger ::before og ::after til cirklerne på startsiden */
+.forside-sektion::before{
+  content: "";
+  /* tom pseudo-element tegner cirklerne bag indhold */
+  position: absolute;
+  z-index: 0;
+  /* noter */
+  width: 18.75rem;
+  height: 18.75rem;
+  top: -7.5rem;
+  right: -7.5rem;
+  border: 0.9rem solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  /* skal ikke ligne at man kan trykke på den */
+}
+.forside-sektion::after{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 12.5rem;
+  height: 12.5rem;
+  top: -4.6rem;
+  right: -4.6rem;
+  border: 0.5rem dashed #8DA58D;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.forside-indhold{
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.forside-indhold > h1 + p{
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+.forside-knapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.start-pause-knap, .mental-pause-knap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 3rem;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+.start-pause-knap{
+  background-color: #3F5D51;
+  color: white;
+}
+.start-pause-knap:hover{
+  background-color: #2F3A36;
+}
+.mental-pause-knap{
+  background-color: transparent;
+  color: #3F5D51;
+  border: 4px solid #3F5D51;
+}
+.mental-pause-knap:hover{
+  background-color: #2F3A36;
+  color: white;
+}
+.play-knap{
+  flex-shrink: 0;
+  /* kommentar */
+  width: 2rem;
+  height: 2rem;
+}
+
+@media screen and (min-width: 769px){
+  .forside-sektion{
+    padding: 5rem 3rem;
+  }
+  .forside-sektion::before{
+    width: 26rem;
+    height: 26rem;
+    top: -9rem;
+    right: -9rem;
+  }
+  .forside-sektion::after{
+    width: 18rem;
+    height: 18rem;
+    top: -5rem;
+    right: -5rem;
+  }
+  .forside-indhold > h1 + p{
+    font-size: 24px;
+  }
+  .start-pause-knap, .mental-pause-knap{
+    width: auto;
+    min-height: 3.75rem;
+    padding: 0.75rem 1.75rem;
+    font-size: 24px;
+  }
+}
+/* Startside SLUT */
+
+/* Pausevalg START */
+.pauser-sektion{
+  padding: 2.5rem 1.5rem;
+}
+.pauser-indhold{
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.pauser-indhold > p{
+  margin-bottom: 1.5rem;
+}
+.pauser-kort{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+.pauser-kort > li{
+  min-width: 0;
+}
+.pause-minutter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 10.5rem;
+  height: 100%;
+  padding: 1.25rem 0.5rem;
+  background-color: #3F5D51;
+  color: white;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+.pause-minutter:hover{
+  background-color: #2F3A36;
+}
+.pause-ikon{
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+.pause-tid{
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.pause-navn{
+  margin-top: 0.75rem;
+  font-size: 20px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 769px){
+  .pauser-sektion{
+    padding: 3.5rem 3rem 2rem;
+  }
+  .pauser-kort{
+    gap: 1.25rem;
+  }
+  .pause-minutter{
+    min-height: 11.5rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+  }
+  .pause-ikon{
+    width: 3rem;
+    height: 3rem;
+  }
+  .pause-tid{
+    font-size: 24px;
+  }
+  .pause-navn{
+    font-size: 24px;
+  }
+}
+/* Pausevalg SLUT */
+
+/* Citat START */
+.citat-indhold{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.citat-billede{
+  width: 100%;
+  max-width: 13rem;
+  height: auto;
+  margin: 0 auto;
+}
+.citat-tekst-indhold{
+  width: 100%;
+  text-align: center;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.citat-ikon{
+  width: 2.5rem;
+  height: auto;
+  margin: 0 auto;
+}
+.citat-sektion blockquote{
+  margin: 0;
+  padding: 0;
+}
+.citat-tekst{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.citat-person{
+  margin-top: 1.25rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3F5D51;
+}
+@media screen and (min-width: 769px){
+  .citat-sektion{
+    padding: 2.5rem 3rem;
+  }
+  .citat-indhold{
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 3rem;
+  }
+  .citat-billede{
+    max-width: 16rem;
+  }
+  .citat-tekst{
+    font-size: 24px;
+  }
+}
+/* Citat SLUT */
+
+/* Følelsesvælger START */
+.stemning-sektion{
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+.stemning-sektion > p{
+  margin-bottom: 2rem;
+}
+.stemninger{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.skjult, .skjult-radio{
+  position: absolute;
+  width: 0.05rem;
+  height: 0.05rem;
+  padding: 0;
+  margin: -0.05rem;
+  overflow: hidden;
+  clip-path: inset(50%);
+  /* den klipper 50% ind fra hver kant så det bliver skjult*/
+  white-space: nowrap;
+  /* gør sådan at der er ingen linjeskift*/
+  border: none;
+}
+.stemnings-knapper{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+  min-height: 5rem;
+  padding: 0.75rem 0.6rem;
+  background-color: white;
+  border: 0.15rem solid #B8C9B8;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+}
+.stemnings-knapper:hover{
+  border-color:#3F5D51;
+  background-color: #EAF1EA;
+}
+.ikon-cirkel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: #E4E8DF;
+  border-radius: 50%;
+}
+.ikon-cirkel img{
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+}
+.stemning-tekst{
+  min-width: 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.stemning-check{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: #3F5D51;
+  color: white;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+/* vælger den der står lige efter */
+.skjult-radio:checked + .stemnings-knapper{
+  background-color: #bbccbb;
+  border-color: #3F5D51;
+  border-width: 3px;
+}
+.skjult-radio:checked + .stemnings-knapper .stemning-check{
+  display: flex;
+}
+.skjult-radio:checked + .stemnings-knapper .ikon-cirkel{
+  background-color: white;
+}
+/* og med tastatur */
+.skjult-radio:focus-visible + .stemnings-knapper{
+  outline: 0.25rem solid #3F5D51;
+  outline-offset: 0.25rem;
+}
+/* forslag der popper op */
+.forslag{
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 2rem 1.5rem;
+  background-color: #E4E8DF;
+  border: 0.25rem solid #B8C9B8;
+  border-radius: 35px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+.forslag-indhold{
+  min-height: 0;
+}
+/* bruger :has :checked her som undersøger om en radioknap er valgt */
+.stemning-sektion:has(.skjult-radio:checked) .forslag{
+  display: flex;
+  animation: pop-op 0.5s;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
+}
+.forslag-label{
+  color: #3F5D51;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+.forslag-knap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  min-height: 3.5rem;
+  background-color: #3F5D51;
+  color: white;
+  border-radius: 3rem;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+.forslag-knap:hover {
+  background-color: #2F3A36;
+}
+@media screen and (min-width: 769px){
+  .stemning-sektion{
+    max-width: 54rem;
+    /* 3rem til venstre + 48rem indhold + 3rem til højre=54 */
+    padding: 3rem;
+  }
+  .stemninger{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stemnings-knapper{
+    min-height: 8.5rem;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  .ikon-cirkel{
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .forslag{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    gap: 1.5rem;
+  }
+  .forslag-indhold{
+    flex: 1 1 20rem;
+  }
+  .forslag-knap{
+    width: auto;
+    padding: 0.75rem 1.5rem;
+  }
+}
+/* Følelsesvælger SLUT */
+
+
+/* Sådan virker det START */
+.trin-sektion{
+  padding: 2.5rem 1.5rem;
+}
+.trin-indhold{
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #D8E5E9;
+  border-radius: 1.5rem;
+}
+.trin-indhold > p{
+  margin-bottom: 2rem;
+}
+.trin-kort{
+  position:relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+.trin{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  text-align: center;
+}
+.trin-cirkel{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.75rem;
+  background-color: white;
+  border: 2px solid #5A745A;
+  border-radius: 50%;
+}
+.trin-cirkel img{
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+}
+.trin-tekst{
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.trin-kort::before{
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: 18%;
+  right: 18%;
+  border-top: 0.2rem dashed #5A745A;
+  pointer-events: none;
+  }
+@media screen and (min-width: 769px){
+  .trin-sektion{
+      padding: 1.5rem 3rem 3.5rem;
+    }
+  .trin-indhold{
+    padding: 2.5rem 2rem;
+    border-radius: 2rem;
+  }
+  .trin-kort{
+    gap: 1rem;
+  }
+  .trin{
+    gap: 1rem;
+  }
+  .trin-tekst{
+    font-size: 20px;
+  }
+}
+/* Sådan virker det SLUT */
