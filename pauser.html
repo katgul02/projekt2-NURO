@@ -3,29 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NURO - Pauser</title>
 </head>
 <body>
 <main>
 
-    <!-- Pause forside -->
-    <section class="forside-sektion">
-        <p class="overtekst">---------------------------</p>
 
-        <h1>Pauser der giver ro</h1>
-        <p>Når hjernen får for meget at se og høre på én gang, kan den blive træt. 
-            En kort pause hjælper den med at finde ro igen.</p>
+ <!-- Pause forside -->
+    <section class="forside-sektion" aria-labelledby="pause-overskrift">
+        <p class="overtekst">Din pause. Dit tempo</p>
+
+        <h1 id="pause-overskrift">Pauser der giver ro</h1>
+        <p>Når hjernen får for meget at se og høre på én gang, kan den blive træt.<br>En kort pause hjælper den med at finde ro igen.</p>
     </section>
 
-    <!-- Breadcrumb sti -->
-    <nav class="pause-sti">
-        <a href="/forside.html">
-            <img src="/img/ikoner/Arrow 1.svg" alt="pil tilbage">
-            Gå tilbage til forside</a>
-        <span>Du er her: <strong aria-current="page">Pauser</strong></span>
-    </nav>
+    <section class="pause-indhold">
 
+        <!-- Breadcrumb sti -->
+        <nav class="pause-sti">
+            <a href="/forside.html">
+                <img src="/img/ikoner/Arrow 1.svg" alt="pil tilbage">
+                Gå tilbage til forside</a>
+            <span>Du er her: <strong aria-current="page">Pauser</strong></span>
+        </nav>
+
+        <!-- Fold ud til mental pause -->
+        <details class="pausefold">
+            <summary>Hvorfor vælge en mental pause?</summary>
+            <p>Tænk på hjernen som benene efter en lang gåtur. Den bliver træt og har brug for at hvile. En kort pause giver hjernen ro, så du bedre kan koncentrere dig bagefter. 
+            <br><strong>Til voksne:</strong> I en dansk undersøgelse afprøvede pædagoger pausestole i syv specialklasser som led i et udviklingsprojekt. Nogle elever havde faste pauser, mens andre selv bad om en. Pædagogerne oplevede, at pausestolen gav eleverne mere ro og overskud. <a href="https://bupl.dk/forsknings-og-udviklingspuljer/udviklingspulje/stolen-giver-en-hjernepause-i-klassen">Læs om udviklingsprojektet hos BUPL</a>.</p>
+        </details>
+
+        <!-- Pause-valg -->
+        <section class="pauser-sektion" aria-labelledby="pausevaelger-overskrift">
+            <h2 id="pausevaelger-overskrift">Pausevælgeren</h2>
+            <p>Vælg den pause, du har lyst til. Du kan altid vælge om</p>
+        
+            <!-- Radioknapper igen -->
+            <fieldset class="pauser-kort">
+                <legend>Vælg en pause</legend>
+        
+                <label class="pauser-ovelse">
+                    <input type="radio" name="pause" value="vejrtraekning" checked>
+                    <span class="pause-top" aria-hidden="true">
+                        <img src="/img/ikoner/cirkler.svg" alt="vejrtræknings ikon">
+                        <span class="pause-valgt">Valgt</span>
+                    </span>
+                    <span class="pause-navn">Vejrtrækning</span>
+                    <span class="pause-info">Følg cirklen med dit åndedræt</span>
+                </label>
+
+                <label class="pauser-ovelse">
+                    <input type="radio" name="pause" value="lydlandskab">
+                    <span class="pause-top" aria-hidden="true">
+                        <img src="/img/ikoner/lydhvid.svg" alt="lydlandskabs ikon">
+                        <span class="pause-valgt">Valgt</span>
+                    </span>
+                    <span class="pause-navn">Lydlandskab</span>
+                    <span class="pause-info">Regn eller skovlyde, du starter selv</span>
+                </label>
+
+                <label class="pauser-ovelse">
+                    <input type="radio" name="pause" value="tankevaekker">
+                    <span class="pause-top" aria-hidden="true">
+                        <img src="/img/ikoner/tankehvid.svg" alt="tankevækker ikon">
+                        <span class="pause-valgt">Valgt</span>
+                    </span>
+                    <span class="pause-navn">Tankevækker</span>
+                    <span class="pause-info">Nævn 3 ting du er god til</span>
+                </label>
+
+                <label class="pauser-ovelse">
+                    <input type="radio" name="pause" value="straekovelser">
+                    <span class="pause-top" aria-hidden="true">
+                        <img src="/img/ikoner/hvis-strecth.svg" alt="strækøvelse ikon">
+                        <span class="pause-valgt">Valgt</span>
+                    </span>
+                    <span class="pause-navn">Strækøvelser</span>
+                    <span class="pause-info">Enkle bevægelser med billeder, videoer og piktogrammer</span>
+                </label>
+            </fieldset>
+        </section>
+
+        <!-- Vejrtrækningsøvelse -->
+        <section class="breath-sektion" aria-labelledby="breath-overskrift">
+            <h2 id="breath-overskrift">Træk vejret sammen med cirklen</h2>
+            <p>Følg cirklen i dit eget tempo. Du kan stoppe når du vil.</p>
+
+            <div class="breath-indhold">
+                <p class="breath-cirkel" aria-hidden="true">
+                    <span class="fase-klar">Klar?</span>
+                    <span class="fase-ind">Træk vejret ind</span>
+                    <span class="fase-hold">Hold kort</span>
+                    <span class="fase-ud">Pust ud</span>
+                </p>
+
+                <label class="start-pause-knap breath-knap">
+                    <input class="breath-afspil" type="checkbox">
+                    <span class="breath-starttekst">Start øvelsen</span>
+                    <span class="breath-stoptekst">Stop øvelsen</span>
+                </label>
+
+                <ol class="breath-trin">
+                    <li>Træk vejret ind</li>
+                    <li>Hold kort, hvis det føles rart</li>
+                    <li>Pust ud</li>
+                </ol>
+            </div>
+
+        <!-- -----Vejrtrækningsøvelses video----- -->
+        <section class="pause-video">
+            <h3>Se øvelsen på video</h3>
+        </section>
+
+        <!-- Transkriptionsfold -->
+        <details class="pause-fold">
+            <summary>Læs transskription</summary>
+            <p>ÆNDRE ÆNDRE ÆNDRE alt efter video</p>
+        </details>
     
+         <!-- Trin til pause -->
+        <section class="pause-tilbage">
+            <h2>Sådan kommer du tilbage</h2>
+            <p>Tre rolige trin, når pausen er slut.</p>
+
+            <ol class="trin-kort" role="list">
+                <li class="trin">
+                    <span class="trin-cirkel" aria-hidden="true">1</span>
+                    <span class="trin-tekst">Tæl ned fra 5</span>
+                </li>
+
+                <li class="trin">
+                    <span class="trin-cirkel" aria-hidden="true">2</span>
+                    <span class="trin-tekst">Stræk kroppen</span>
+                </li>
+
+                <li class="trin">
+                    <span class="trin-cirkel" aria-hidden="true">3</span>
+                    <span class="trin-tekst">Gå roligt tilbage</span>
+                </li>
+            </ol>
+        </section>
+
+        <details class="pause-fold pause-fold-voksne">
+            <summary>Til voksne- sådan leder du en pause med NURO</summary>
+            <ol class="pause-fold-tekst">
+                <li>Sæt dig ved siden af eleven, og start øvelsen sammen.</li>
+                <li>Følg cirklen med dit eget åndedræt -eleven spejler dig.</li>
+                <li>Brug videoen, hvis eleven har brug for at se øvelsen først.</li>
+                <li>Giv eleven tid til at afslutte pausen og vende tilbage til timen</li>
+            </ol>
+        </details>
+    </section>
 </main>
 </body>
 </html>
