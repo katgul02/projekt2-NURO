@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.forside-sektion{
+    padding: 3ren 1.5rem;
+}
+/* dét der kommer fra forside.css */
+.forside-sektion > *{
+    position: relative;
+    z-index: 1;
+    max-width: 48rem;
+    margin-inline: auto;
+    /* https://www.w3schools.com/cssref/css_pr_margin-inline.php */
+}
+@media screen and (min-width: 768px){
+    .forside-sektion > h1 + p{
+        font-size: 1.5rem;
+    }
+}
