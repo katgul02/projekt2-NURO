@@ -209,3 +209,42 @@
     }
 }
 /* Pausevælger slut */
+
+
+
+/* Sådan kommer du tilbage */
+.pause-tilbage{
+    margin-top: 2.5rem;
+}
+.pause-tilbage .trin-kort{
+    margin-top: 1.25rem;
+}
+.pause-tilbage .trin-cirkel{
+    font-weight: 800;
+}
+@media screen and (min-width: 768px){
+    .pause-tilbage > h2 + p{
+        font-size: 1.5rem;
+    }
+}
+/* Sådan kommer du tilbage */
+
+
+/* Til voksne fold ud */
+.pause-indhold .pause-fold-voksne{
+    margin-top: 2.5rem;
+    border-color: #3F5D51;
+    border-radius: 2rem;
+    background-color: #EAF1EA;
+}
+.pause-indhold .pause-fold-voksne[open]{
+    border-radius: 1rem;
+}
+.pause-fold-voksne > summary{
+    color: #2F3A36;
+}
+.pause-fold-voksne > ol{
+    padding: 0 1rem 1rem 2.25rem;
+    line-height: 1.6;
+}
+/* Til voksne fold slut */
