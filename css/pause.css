@@ -18,3 +18,48 @@
         font-size: 1.5rem;
     }
 }
+/* Hele pausesiden */
+.pause-indhold{
+   /* 48rem + 1.5rem luft i hver side=51 */
+   max-width: 51rem;
+   margin: 0 auto;
+   padding: 0 1.5rem 3rem;
+}
+.pause-sti{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    padding: 0.5rem 0;
+}
+.pause-sti a{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.75rem;
+    color: #3F5D51;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.pause-sti img{
+    width: 1.25rem;
+}
+/* fælles til foldud */
+.pause-indhold details{
+    border: 0.125rem solid #B8C9B8;
+    border-radius: 1rem;
+}
+.pause-indhold summary{
+    padding: 0.75rem 1rem;
+    font-weight: 800;
+    line-height: 1.5;
+    cursor: pointer;
+}
+/* tastatur */
+.pause-indhold summary:focus-visible{
+    outline: 0.2rem solid #3F5D51;
+    outline-offset: 0.25rem;
+}
+.pause-indhold details > p{
+    padding: 0 1rem 1rem;
+}
