@@ -63,3 +63,149 @@
 .pause-indhold details > p{
     padding: 0 1rem 1rem;
 }
+
+
+
+/* Hvad er en mental pause fold */
+.pausefold{
+    background-color: #EAF1EA;
+    margin-top: 2rem;
+}
+.pausefold > p > strong{
+    display: block;
+    margin-top: 0.75rem;
+}
+.pausefold a{
+    color: #3F5D51;
+    text-decoration: underline
+}
+/* Mental pause fold slut */
+
+
+
+/* Pausevælgeren */
+.pause-indhold .pauser-sektion{
+    margin-top: 2.5rem;
+    padding: 0;
+}
+.pause-indhold .pauser-kort{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1.25rem 1rem;
+    min-width: 0;
+    margin-top: 1.25rem;
+    padding: 0;
+    border: 0;
+}
+.pauser-kort > legend, .pauser-kort > label input[type="radio"]{
+    position: absolute;
+    width: 0.05rem;
+    height: 0.05rem;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.pauser-kort > label{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    min-width: 0;
+    min-height: 8.5rem;
+    padding: 0.65rem;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    background-color: #3F5D51;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+    color: white;
+    cursor: pointer;
+}
+.pauser-kort > label:hover{
+  background-color: #2F3A36;
+}
+.pause-top{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+.pause-top img{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+.pause-valgt{
+    display: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2rem;
+    background-color: white;
+    color: #2F3A36;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.pauser-kort > label .pause-navn{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+.pause-info{
+    font-size: 20px;
+    line-height: 1.4;
+}
+.pauser-kort > label:has(input:checked){
+    border-color: #3F5D51;
+    background-color: #2F3A36;
+}
+.pauser-kort > label:has(input:checked) .pause-valgt{
+    display: inline-block;
+}
+/* tastatur */
+.pauser-kort > label:has(input:focus-visible){
+    outline: 3px solid #2F3A36;
+    outline-offset: 0.2rem;
+}
+@media screen and (min-width: 768px){
+    .pauser-kort > label{
+        display: grid;
+        grid-template-columns: 3rem minmax(0, 1fr) auto;
+        grid-template-rows: auto;
+        align-content: center;
+        column-gap: 0.75rem;
+        row-gap: 0.35rem;
+        padding: 1rem;
+    }
+    .pause-top{
+        display: contents;
+    }
+    .pause-top img{
+        grid-column: 1;
+        grid-row: 1 / 3;
+        align-self: center;
+        width: 4rem;
+        height: 4rem;
+    }
+    .pause-valgt{
+        grid-column: 3;
+        grid-row: 1;
+        align-self: start;
+    }
+    .pauser-kort > label .pause-navn{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .pause-info{
+        grid-column: 2 / -1;
+        grid-row: 2;
+    }
+}
+/* Pausevælger slut */
