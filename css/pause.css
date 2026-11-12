@@ -258,7 +258,49 @@
 .breath-cirkel .fase-klar{
     opacity: 1;
 }
-
+/* start+stop knap*/
+.breath-starttekst, .breath-stoptekst{
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    display: flex;
+}
+.breath-stoptekst,
+.breath-afspil:checked + .breath-starttekst{
+     display: none;
+}
+.breath-afspil:checked ~ .breath-stoptekst{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+.start-pause-knap .breath-starttekst img,
+.start-pause-knap .breath-stoptekst img{
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    flex: 0 0 1.25rem;
+}
+.breath-knap{
+    position: relative;
+    width: auto;
+    min-width: 10rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    cursor: pointer;
+}
+.breath-afspil{
+    position: absolute;
+    width: 0.05rem;
+    height: 0.05em;
+    margin: 0;
+    clip-path: inset(50%);
+}
 
 
 
