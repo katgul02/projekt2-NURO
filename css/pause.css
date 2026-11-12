@@ -211,6 +211,56 @@
 /* Pausevælger slut */
 
 
+/* Vejrtrækningsøvelsen */
+.breath-sektion{
+    margin-top: 2.5rem;
+}
+/* når pausen vælges og det bliver vist */
+.pause-indhold:not(:has(input[name="pause"][value="vejrtraekning"]:checked)) > .breath-sektion{
+    display: none;
+}
+.breath-indhold{
+    --rytme: 10s;
+    /* custom property https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties */
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+/* de to cirkler */
+.breath-cirkel{
+    position: relative;
+    width: min(15rem, 85%);
+    aspect-ratio: 1;
+    margin: 1.25rem 0;
+    border: 4px solid #3F5D51;
+    border-radius: 50%;
+    background-color: #F7F5F0;
+    box-shadow:
+        0 0 0 0.35rem #F7F5F0,
+        0 0 0 0.45rem #B8C9B8,
+        0 0 0 0.8rem #F7F5F0,
+        0 0 0 0.9rem #B8C9B8;
+    text-align: center;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.25;
+    transform: scale(0.85);
+}
+.breath-cirkel span{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20%;
+    opacity: 0;
+}
+.breath-cirkel .fase-klar{
+    opacity: 1;
+}
+
+
+
 
 /* Sådan kommer du tilbage */
 .pause-tilbage{
