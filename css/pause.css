@@ -301,12 +301,189 @@
     margin: 0;
     clip-path: inset(50%);
 }
+/* tastatur */
+.breath-knap:has(.breath-afspil:focus-visible){
+    outline: 0.1875rem solid #2F3A36;
+    outline-offset: 0.25rem;
+}
+.breath-stoptekst,
+.breath-afspil:checked + .breath-starttekst{
+    /* + --> vælger elementet der står direkte efter det første element */
+    display: none;
+}
+.breath-afspil:checked ~.breath-stoptekst{
+    /* ~ --> vælger matvhende elemter, der står senere ved siden af det første */
+    display: inline;
+}
+.breath-trin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.75rem;
+    padding: 0;
+    list-style-position: inside;
+}
+.breath-trin li{
+    position: relative;
+    isolation: isolate;
+    padding: 0.35rem 0.7rem;
+    border: 0.125rem solid #B8C9B8;
+    border-radius: 2rem;
+    background-color: #F7F5F0;
+    font-size: 18px;
+    font-weight: 700;
+}
+.breath-trin li::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 2rem;
+    background-color: #D0DFD0;
+    opacity: 0;
+}
+/* rytme af trin og cirkel*/
+.breath-indhold:has(.breath-afspil:checked) .fase-klar {
+    opacity: 0;
+}
+/*infinte-->gentager indtil den stoppes*/
+/* custom property+var bestemmer hvor lang runden varer */
+/* step end-->timing funktionen til at skifte ved trin */
+.breath-indhold:has(.breath-afspil:checked) .fase-ind,
+.breath-indhold:has(.breath-afspil:checked) .breath-trin li:nth-child(1)::before{
+    animation: breath-vis-ind var(--rytme) step-end infinite; 
+}
+.breath-indhold:has(.breath-afspil:checked) .fase-hold,
+.breath-indhold:has(.breath-afspil:checked) .breath-trin li:nth-child(2)::before{
+    animation: breath-vis-hold var(--rytme) step-end infinite;
+}
+.breath-indhold:has(.breath-afspil:checked) .fase-ud,
+.breath-indhold:has(.breath-afspil:checked) .breath-trin li:nth-child(3)::before{
+    animation: breath-vis-ud var(--rytme) step-end infinite;
+}
+
+/* https://www.w3schools.com/cssref/atrule_keyframes.php */
+/* 0% er starten og 100% er slutningen */
+@keyframes breath-rytme{
+    0%, 100% {transform: scale(0.85);}
+    40%, 60% {transform: scale(1);}
+}
+/* cirklen vokser fra 0-40, være stor fra til 60 og. mindre frem mod 100 */
+/* scale(0.85) --> 85% af størrelsen*/
+@keyframes breath-vis-ind{
+    0% {opacity: 1;}
+    40%, 100% {opacity: 0;}
+}
+@keyframes breath-vis-hold{
+    0%, 60%, 100% {opacity: 0;}
+    40% {opacity: 1;}
+}
+@keyframes breath-vis-ud{
+    0% {opacity: 0;}
+    60%, 100% {opacity: 1;}
+}
+
+@media screen and (min-width: 768px){
+    .breath-sektion > h2 + p{
+        font-size: 1.5rem;
+    }
+    .breath-cirkel{
+        width: 16rem;
+    }
+}
+/* følger brugerens indstilling. */
+@media (prefers-reduced-motion: no-preference) {
+    .breath-indhold:has(.breath-afspil:checked) .breath-cirkel {
+        animation: breath-rytme var(--rytme) ease-in-out infinite;
+    }
+}
+/* Vejrtrækningsøvelse slut */
+
+
+
+/* Video */
+.pause-video{
+    margin-top: 2.5rem;
+}
+.pause-video > h3{
+    font-size: 2.25rem;
+    line-height: 1.2;
+}
+.pause-video .video-beskrivelse{
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.pause-video video{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    aspect-ratio: 16 / 9;
+    border: 0.125rem solid #3F5D51;
+    border-radius: 1rem;
+    background-color: #EAF1EA;
+    object-fit: contain;
+}
+/* tast */
+.pause-video video:focus-visible,
+.pause-video .pause-fold summary:focus-visible{
+    outline: 0.125rem solid #2F3A36;
+    outline-offset: 0.125rem;
+}
+.pause-video .video-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    margin: 0.75rem 0 0;
+    padding: 0 0.5rem;
+    color: #2F3A36;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+/* transkription fold */
+.pause-video .pause-fold{
+    margin-top: 1rem;
+    border: 0;
+    border-radius: 0;
+    border-top: 2px solid #D9CFC0;
+    border-bottom: 2px solid #D9CFC0;
+    background: transparent;
+    box-shadow: none;
+}
+.pause-video .pause-fold summary{
+    padding: 0.85rem 0;
+    color: #3F5D51;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.4;
+    cursor: pointer;
+}
+.pause-video .pause-fold > p{
+    margin: 0;
+    padding: 0 0 1rem;
+    color: #2F3A36;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+@media screen and (min-width: 768px){
+    .pause-video .pause-fold summary{
+        font-size: 1.15rem;
+    }
+    .pause-video .pause-fold > p{
+        font-size: 1.2rem;
+    }
+}
+/* Video slut */
 
 
 
 /* Sådan kommer du tilbage */
 .pause-tilbage{
     margin-top: 2.5rem;
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background-color: #D8E6E9;
 }
 .pause-tilbage .trin-kort{
     margin-top: 1.25rem;
@@ -317,26 +494,75 @@
 @media screen and (min-width: 768px){
     .pause-tilbage > h2 + p{
         font-size: 1.5rem;
+        padding: 2rem;
+        border-radius: 2rem;
     }
 }
 /* Sådan kommer du tilbage */
 
 
-/* Til voksne fold ud */
-.pause-indhold .pause-fold-voksne{
-    margin-top: 2.5rem;
-    border-color: #3F5D51;
-    border-radius: 2rem;
-    background-color: #EAF1EA;
+/* Til voksne fold ud*/
+.pause-voksne{
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
-.pause-indhold .pause-fold-voksne[open]{
-    border-radius: 1rem;
+.pause-voksne h2{
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    line-height: 1.15;
 }
-.pause-fold-voksne > summary{
+.pause-voksne-intro{
+    max-width: 36rem;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.pause-voksne-linje{
+    margin: 2rem 0 1.5rem;
+    border: 0;
+    border-top: 1px solid #3F5D51;
+}
+.pause-voksne details{
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.pause-fold-voksne summary{
+    padding: 1rem 0;
     color: #2F3A36;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.4;
+    cursor: pointer;
 }
-.pause-fold-voksne > ol{
-    padding: 0 1rem 1rem 2.25rem;
-    line-height: 1.6;
+.pause-fold-tekst{
+    max-width: 38rem;
+    margin: 0;
+    padding: 0 0 1.5rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
 }
-/* Til voksne fold slut */
+.pause-fold-tekst li{
+    padding-left: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+.pause-fold-tekst li:last-child{
+    margin-bottom: 0;
+}
+.pause-voksne details.pause-fold-voksne summary:focus-visible{
+    outline: 0.15rem solid #2F3A36;
+    outline-offset: 0.2rem;
+}
+@media screen and (min-width: 768px){
+    .pause-voksne h2{
+        font-size: 2.5rem;
+    }
+    .pause-fold-voksne summary{
+        font-size: 1.5rem;
+    }
+    .pause-fold-tekst{
+        font-size: 1.2rem;
+    }
+}
+/* Til voksne slut*/

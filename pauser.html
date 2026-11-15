@@ -16,9 +16,8 @@
 <body>
 <main>
 
-
- <!-- Pause forside -->
-    <section class="forside-sektion" aria-labelledby="pause-overskrift">
+    <!-- Pause forside -->
+    <section class="forside-sektion">
         <p class="overtekst">Din pause. Dit tempo</p>
 
         <h1 id="pause-overskrift">Pauser der giver ro</h1>
@@ -28,14 +27,13 @@
     <section class="pause-indhold">
 
         <!-- Breadcrumb sti -->
-        <nav class="pause-sti">
+        <nav class="pause-sti" aria-label="Brødkrummesti">
             <a href="/forside.html">
                 <img src="/img/ikoner/Arrow 1.svg" alt="pil tilbage">
                 Gå tilbage til forside</a>
             <span>Du er her: <strong aria-current="page">Pauser</strong></span>
         </nav>
 
-        
         <!-- Fold ud til mental pause -->
         <details class="pausefold">
             <summary> Hvad er en mental pause?</summary>
@@ -44,7 +42,7 @@
         </details>
 
         <!-- Pause-valg -->
-        <section class="pauser-sektion" aria-labelledby="pausevaelger-overskrift">
+        <section class="pauser-sektion">
             <h2 id="pausevaelger-overskrift">Pausevælgeren</h2>
             <p>Vælg den pause, du har lyst til. Du kan altid vælge om</p>
         
@@ -55,7 +53,7 @@
                 <label class="pauser-ovelse">
                     <input type="radio" name="pause" value="vejrtraekning" checked>
                     <span class="pause-top" aria-hidden="true">
-                        <img src="/img/ikoner/cirkler.svg" alt="vejrtræknings ikon">
+                        <img src="/img/ikoner/vejrtrkningscirkel.svg" alt="vejrtræknings ikon">
                         <span class="pause-valgt">Valgt</span>
                     </span>
                     <span class="pause-navn">Vejrtrækning</span>
@@ -94,8 +92,9 @@
             </fieldset>
         </section>
 
+
         <!-- Vejrtrækningsøvelse -->
-        <section class="breath-sektion" aria-labelledby="breath-overskrift">
+        <section class="breath-sektion">
             <h2 id="breath-overskrift">Træk vejret sammen med cirklen</h2>
             <p>Følg cirklen i dit eget tempo. Du kan stoppe når du vil.</p>
 
@@ -109,29 +108,49 @@
 
                 <label class="start-pause-knap breath-knap">
                     <input class="breath-afspil" type="checkbox">
-                    <span class="breath-starttekst">Start øvelsen</span>
-                    <span class="breath-stoptekst">Stop øvelsen</span>
+
+                    <span class="breath-starttekst">
+                        <img src="/img/ikoner/playknap-hvid.svg" alt="start pause ikon">
+                        <span>Start øvelsen</span>
+                    </span>
+                    <span class="breath-stoptekst">
+                        <span>Stop øvelsen</span>
+                    </span>
                 </label>
 
                 <ol class="breath-trin">
                     <li>Træk vejret ind</li>
-                    <li>Hold kort, hvis det føles rart</li>
+                    <li>Hold kort</li>
                     <li>Pust ud</li>
                 </ol>
             </div>
-
-        <!-- -----Vejrtrækningsøvelses video----- -->
-        <section class="pause-video">
-            <h3>Se øvelsen på video</h3>
         </section>
 
-        <!-- Transkriptionsfold -->
-        <details class="pause-fold">
-            <summary>Læs transskription</summary>
-            <p>ÆNDRE ÆNDRE ÆNDRE alt efter video</p>
-        </details>
+        <!--Vejrtrækningsøvelses video-->
+        <section class="pause-video">
+            <h3>Se øvelsen på video</h3>
+            <p class="video-beskrivelse">Se videoen sammen, og gør ligesom i den.</p>
+
+            <video controls playsinline preload="metadata">
+                <source src="/video/NURO-Vejrtrækningsøvelse.mp4" type="video/mp4">
+            </video>
+            <p class="video-info">
+                <strong>Vejrtrækning med cirklen</strong>
+                <span>02:13 min</span>
+                <span>Transskription nedenfor</span>
+            </p>
+
+            <!-- Transkriptionsfold -->
+            <details class="pause-fold">
+                <summary>Læs transskription</summary>
+                <p>Nu holder vi en lille pause sammen. Sæt dig godt til rette og læg mærke til cirklen på skærmen. Vi trækker vejret sammen med cirklen. Når cirklen vokser, trækker vi vejret ind. Hold. Og når cirklen skrumper puster vi vejret ud. Klar? Nu vokser cirklen træk vejret ind, hold, og nu bliver cirklen mindre, pust langsom ud. En gang til, ind, hold, og ud... Rigtig godt klaret. Nu kan du vælge. Du kan se videoen igen eller gå roligt tilbage til det du var igang med.
+                </p>
+            </details>   
+        </section>
+
+        
     
-         <!-- Trin til pause -->
+        <!-- Trin til pause -->
         <section class="pause-tilbage">
             <h2>Sådan kommer du tilbage</h2>
             <p>Tre rolige trin, når pausen er slut.</p>
@@ -153,17 +172,29 @@
                 </li>
             </ol>
         </section>
-
-        <details class="pause-fold pause-fold-voksne">
-            <summary>Til voksne- sådan leder du en pause med NURO</summary>
-            <ol class="pause-fold-tekst">
-                <li>Sæt dig ved siden af eleven, og start øvelsen sammen.</li>
-                <li>Følg cirklen med dit eget åndedræt -eleven spejler dig.</li>
-                <li>Brug videoen, hvis eleven har brug for at se øvelsen først.</li>
-                <li>Giv eleven tid til at afslutte pausen og vende tilbage til timen</li>
-            </ol>
-        </details>
     </section>
+
+        <!-- Til voksne -->
+        <section class="om-nuro-sektion pause-voksne">
+            <div class="om-nuro-indhold pause-voksne-indhold">
+                <p class="overtekst">TIL VOKSNE</p>
+                <h2>Støt eleven under pausen</h2>
+                <p class="pause-voksne-intro">Følg elevens tempo, og hjælp med at skabe en rolig ramme.</p>
+            
+
+                <hr class="pause-voksne-linje">
+                <details class="pause-fold-voksne">
+                    <summary>Sådan leder du en pause med NURO</summary>
+                    <ol class="pause-fold-tekst">
+                        <li>Sæt dig ved siden af eleven, og følg elevens tempo.</li>
+                        <li>Lav øvelsen sammen, eller vis videoen først.</li>
+                        <li>Giv eleven tid til at afslutte og vende tilbage til timen.</li>
+                    </ol>
+                </details>
+            </div>
+        </section>
+
 </main>
+
 </body>
 </html>
