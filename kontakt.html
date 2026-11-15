@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NURO-kontakt</title>
+
+    <link rel="stylesheet" href="/css/kontakt.css">
+    <link rel="stylesheet" href="/css/forside.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="sideheader">
+    <div class="header-indhold">
+        <a href="/forside.html" class="header-logo">
+            <img src="/img/ikoner/logo.svg" alt="NURO logo">
+            <span>NURO</span>
+        </a>
+
+        <button type="button" class="header-tilpas">
+            <img src="/img/ikoner/tilpas-sliders.svg" alt="Tilpas side knap">
+            <span>Tilpas siden</span>
+        </button>
+    </div>
+
+    <nav class="header-nav" aria-label="Hoved navigation">
+            <ul>
+                <li><a href="/forside.html">Forside</a></li>
+                <li><a href="/pauser.html">Pauser</a></li>
+                <li><a href="/kontakt.html" aria-current="page">Kontakt</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+    <section class="forside-sektion">
+        <p class="overtekst">DU MÅ GERNE SKRIVE</p>
+
+        <h1 id="pause-overskrift">Snak med en voksen</h1>
+        <p>Her kan du skrive til en voksen, der lytter. Du bestemmer selv, hvad du vil fortælle, og du må også bare sige hej.</p>
+    </section>
+
+
+    <!-- brødkrumme -->
+    <nav class="pause-sti" aria-label="Brødkrummesti">
+        <a href="/forside.html">
+            <img src="/img/ikoner/Arrow 1.svg" alt="pil tilbage">
+            Gå tilbage til forside</a>
+            <span>Du er her: <strong aria-current="page">Kontakt</strong></span>
+    </nav>
+
+
+    <!-- kontaktoplysninger -->
+     <section class="kontakt-oplysninger">
+        <div class="kontakt-oplysninger-top">
+            <div>
+                <h2>Kontakt os</h2>
+                <p>Sådan kan du og dine forældre få fat i NURO</p>
+            </div>
+        <img class="kontakt-figur" src="/img/figurmedbrev.png" alt="figur med brev">
+        
+        </div>
+
+        <div class="kontakt-oplysning">
+            <img src="/img/ikoner/ikon-mail 1.svg" alt="email ikon">
+            <div>
+                <h3>E-mail</h3>
+                <a href="mailto:viernuro@nuro.dk">viernuro@nuro.dk</a>
+            </div>
+        </div>
+
+        <div class="kontakt-oplysning">
+            <img src="/img/ikoner/ikon-ur 1.svg" alt="ur ikon">
+            <div>
+                <h3>Vi svarer</h3>
+                <p>Alle hverdage mellem kl. 8 og 15</p>
+            </div>
+        </div>
+     </section>
+
+     <!-- vælg en voksen sektion -->
+    <section class="kontakt-voksne">
+        <h2>Hvem kan du skrive til?</h2>
+        <p>Vælg den voksen, der passer bedst til det, du har på hjerte. Du skriver til en voksen fra NURO.</p>
+
+        <div class="kontakt-voksenliste">
+            <article class="kontakt-voksen">
+                <img src="/img/ikoner/person-paedagog.svg" alt="pædagog ikon">
+                <div>
+                    <h3>Pædagogen</h3>
+                    <p>Kan hjælpe med pauser, ro og det, der er svært i skoledagen</p>
+                    <a href="#modtager">Skriv til mig</a>
+                </div>
+            </article>
+
+            <article class="kontakt-voksen">
+                <img src="/img/ikoner/person-laerer.svg" alt="lærer ikon">
+                <div>
+                    <h3>Læreren</h3>
+                    <p>Kan hjælpe med fag, lektier og ting, der sker i timerne</p>
+                    <a href="#modtager">Skriv til mig</a>
+                </div>
+            </article>
+
+            <article class="kontakt-voksen">
+                <img src="/img/ikoner/person-trivselsvejleder.svg" alt="trivselsvejleder ikon">
+                <div>
+                    <h3>Trivselsvejlederen</h3>
+                    <p>Kan hjælpe hvis du er ked af det, eller hvis noget føles utrygt</p>
+                    <a href="#modtager">Skriv til mig</a>
+                </div>
+            </article>
+
+            <article class="kontakt-voksen">
+                <img src="/img/ikoner/logogron.svg" alt="nuro ikon">
+                <div>
+                    <h3>NURO-teamet</h3>
+                    <p>Kan hjælpe med spørgsmål om NURO og hjemmesiden</p>
+                    <a href="#modtager">Skriv til mig</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- formular og spørgsmål -->
+    <div class="kontakt-layout">
+        <section class="kontakt-formular">
+            <h2>Skriv til os</h2>
+            <p>Udfyld felterne herunder. Kun beskeden er nødvendig, resten er op til dig</p>
+        
+            <p class="kontakt-status">Du har ikke valgt en bestemt voksen endnu. Det er helt okay</p>
+        
+            <form>
+                <div class="formular-felt">
+                    <label for="navn">Dit navn</label>
+                    <input id="navn" name="navn "type="text" placeholder="Du må også bruge et kaldenavn">
+                    <p>Du bestemmer selv, om du vil skrive dit rigtige navn.</p>
+                </div>
+
+                 <div class="formular-felt">
+                    <label for="modtager">Hvem vil du skrive til?</label>
+                    <select id="modtager" name="modtager" required>
+                        <option value="">Det er lige meget</option>
+                        <option value="paedagog">Pædagogen</option>
+                        <option value="laerer">Læreren</option>
+                        <option value="trivselsvejleder">Trivselsvejlederen</option>
+                        <option value="nuro-team">NURO-teamet</option>
+                    </select>   
+                </div>
+
+                <div class="formular-felt">
+                    <label for="besked">Din besked</label>
+                    <textarea id="besked" name="besked" placeholder="Skriv her..." required></textarea>
+                    <p>Skriv med dine egne ord. Korte beskeder er helt okay</p>
+                </div>
+
+                <button type="submit">Send besked</button>
+            </form>
+        </section>
+
+        <aside class="kontakt-faq">
+            <h2>Spørgsmål og svar</h2>
+            <p>Tryk på et spørgsmål for at se svaret.</p>
+            
+            <details>
+                <summary>Hvad sker der, når jeg har skrevet?</summary>
+                <p>En voksen fra NURO læser din besked og svarer dig.</p>
+            </details>
+
+            <details>
+                <summary>Må jeg skrive uden mit rigtige navn?</summary>
+                <p>Ja, du må gerne bruge et kaldenavn. Du bestemmer selv, hvad du vil fortælle</p>
+            </details>
+
+            <details>
+                <summary>Hvad hvis det er rigtig svært lige nu?</summary>
+                <p>Gå til en voksen tæt på dig, hvis du kan. Du kan også ringe gratis og anonymt til BørneTelefonen på <a href="tel:116111">116 111</a>. Der sidder voksne klar til at lytte, også om aftenen</p>
+            </details>
+        </aside>
+    </div>
+
+    <!-- om nuro -->
+    <section class="om-nuro-sektion">
+        <div class="om-nuro-indhold">
+            <p class="overtekst">ET ROLIGT HJØRNE PÅ NETTET</p>
+            <h2>Om NURO</h2>
+            <p>NURO er et roligt hjørne på nettet for alle, der har brug for en pause.Her kan man trække vejret, lytte til rolige lyde og finde ro i 1-15 minutter ad gangen.</p>
+
+            <p class="om-nuro-tryghed">NURO gemmer ingenting om dig. Der er ingen reklamer, ingen spil med point og ingen links til andre sider.</p>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
