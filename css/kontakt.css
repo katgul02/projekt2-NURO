@@ -20,3 +20,413 @@
         max-width: 51rem;
     }
 }
+
+
+/* pause sti */
+.pause-sti{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    padding: 0.5rem 0;
+}
+.pause-sti a{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.75rem;
+    color: #3F5D51;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.pause-sti img{
+    width: 1.25rem;
+}
+
+.pause-sti, .kontakt-oplysninger, .kontakt-voksne, .kontakt-layout{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 51rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    color: #2F3A36;
+}
+/* pausesti slut */
+
+/* fælles */
+.kontakt-oplysninger, .kontakt-voksne, .kontakt-layout{
+    margin-top: 2.5rem;
+}
+.kontakt-oplysninger h2,
+.kontakt-voksne h2,
+.kontakt-formular h2,
+.kontakt-faq h2{
+    margin: 0 0 0.5rem;
+    color: #2F3A36;
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+.kontakt-oplysninger > p,
+.kontakt-voksne > p{
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 768px){
+    .kontakt-oplysninger h2,
+    .kontakt-voksne h2,
+    .kontakt-formular h2,
+    .kontakt-faq h2,
+    .om-nuro-indhold h2{
+        font-size: 2.2rem;
+    }
+}
+
+/* kontakt og svar */
+.kontakt-oplysning{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    padding: 0.9rem 1rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.75rem;
+}
+.kontakt-oplysning img{
+    flex: 0 0 3rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.6rem;
+    border-radius: 50%;
+    background-color: #D0DfD0;
+    object-fit: contain;
+}
+.kontakt-oplysning h3{
+    margin: 0 0 0.2rem;
+    color: #3F5D51;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.kontakt-oplysning p{
+    margin: 0;
+    font-size: 1.2rem;
+}
+.kontakt-oplysning a{
+    color: #2F3A36;
+    font-size: 1.2rem;
+}
+.kontakt-oplysninger-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.kontakt-oplysninger-top > div{
+    flex: 1;
+    min-width: 0;
+}
+.kontakt-figur{
+    display: block;
+    flex: 0 0 6rem;
+    width: 5rem;
+    height: 6rem;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 768px){
+    .kontakt-oplysninger{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem 1rem;
+    }
+    .kontakt-oplysninger h2,
+    .kontakt-oplysninger > p{
+        grid-column: 1 / -1;
+    }
+    .kontakt-oplysning{
+        min-width: 0;
+        margin-top: 0;
+        padding: 0.65rem 0.85rem;
+    }
+    .kontakt-oplysning img{
+        flex-basis: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .kontakt-oplysninger-top{
+        grid-column: 1 / -1;
+    }
+    .kontakt-figur{
+        flex-basis: 10rem;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+/* kontakt og svar slut */
+
+
+/* valg af voksen */
+.kontakt-voksenliste{
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+.kontakt-voksen{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.75rem;
+}
+.kontakt-voksen > img{
+    flex: 0 0 4rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    background-color: #D0DfD0;
+    object-fit: contain;
+}
+.kontakt-voksen h3{
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+}
+.kontakt-voksen p{
+    margin: 0 0 0.75rem;
+    line-height: 1.4;
+}
+.kontakt-voksen a{
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #3F5D51;
+    border-radius: 2rem;
+    color: #3F5D51;
+    font-weight: 700;
+    text-decoration: none;
+}
+.kontakt-voksen a:hover{
+    background-color: #3F5D51;
+    color: white;
+}
+
+@media screen and (min-width: 768px){
+    .kontakt-voksenliste{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+    .kontakt-voksen{
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    .kontakt-voksen > img{
+        flex-basis: 3rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 0.5rem;
+    }
+    .kontakt-voksen h3{
+        font-size: 1.4rem;
+    }
+    .kontakt-voksen p,
+    .kontakt-voksen a{
+        font-size: 1.2rem;
+    }
+}
+/* valg af voksen slut */
+
+
+/* formular */
+.kontakt-layout{
+    box-sizing: border-box;
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    max-width: 76rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    color: #2F3A36;
+}
+.kontakt-formular,
+.kontakt-faq{
+    min-width: 0;
+}
+.kontakt-formular h2,
+.kontakt-faq h2{
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+.kontakt-formular > p,
+.kontakt-faq > p{
+    line-height: 1.6;
+}
+.kontakt-status{
+    margin: 1.25rem 0;
+    padding: 0.9rem 1rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.75rem;
+    background: #E3E9DF;
+    color: #3F5D51;
+    font-weight: 800;
+    font-size: 1rem;
+}
+.formular-felt{
+    margin-bottom: 1.25rem;
+}
+.formular-felt label{
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 800;
+}
+.formular-felt input,
+.formular-felt select,
+.formular-felt textarea{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.65rem;
+    background: #F7F5F0;
+    color: #2F3A36;
+    font: inherit;
+}
+.formular-felt textarea {
+    min-height: 8rem;
+}
+.kontakt-formular > p{
+    line-height: 1.6;
+}
+.kontakt-status{
+    margin: 1.25rem 0;
+    padding: 0.9rem 1rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.75rem;
+    background-color: #E3E9DF;
+    color: #3F5D51;
+    font-weight: 800;
+}
+.formular-felt{
+    margin-bottom: 1.25rem;
+}
+.formular-felt label{
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+.formular-felt input,
+.formular-felt select,
+.formular-felt textarea{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border: 2px solid #B8C9B8;
+    border-radius: 0.65rem;
+    background-color: #F7F5F0;
+    color: #2F3A36;
+    font: inherit;
+}
+.formular-felt textarea{
+    min-height: 8rem;
+}
+.formular-felt > p{
+    margin: 0.4rem 0 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.kontakt-formular button{
+    min-height: 3rem;
+    padding: 0.7rem 1.5rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: #3F5D51;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.075);
+}
+.kontakt-formular button:hover{
+    background-color: #2F3A36;
+}
+/* formular slut */
+
+/* FAQ */
+.kontakt-faq{
+    align-self: start;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: #d8e5e8;
+}
+.kontakt-faq > p{
+    margin: 0 0 1.25rem;
+}
+.kontakt-faq details{
+    margin-bottom: 0.75rem;
+    padding: 0.15rem 1rem;
+    border-radius: 0.75rem;
+    background: white;
+}
+.kontakt-faq summary{
+    padding: 0.8rem 0;
+    color: #2F3A36;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+.kontakt-faq summary::marker{
+    color: #3F5D51;
+}
+.kontakt-faq details p{
+    margin: 0;
+    padding: 0 0 0.9rem;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+.kontakt-faq a{
+    color: #3F5D51;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px){
+    .kontakt-layout{
+        max-width: 51rem;
+    }
+}
+/* faq slut */
+
+/* om nuro start */
+.om-nuro-sektion{
+    padding: 2.5rem 1.5rem;
+    background-color: #D9CFC0;
+    color: #2F3A36;
+}
+.om-nuro-indhold{
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.om-nuro-indhold h2{
+    margin: 0.5rem 0 0.75rem 0;
+    font-size: 1.6rem;
+    line-height: 1.3;
+}
+.om-nuro-indhold > p{
+    margin: 0;
+    line-height: 1.5;
+}
+.om-nuro-indhold .om-nuro-tryghed{
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background-color: #F7F5F0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+/* om nuro slut */
