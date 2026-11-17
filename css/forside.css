@@ -13,6 +13,117 @@ body{
 
 
 /* HEADER */
+.sideheader{
+  background-color: #A3B8C9;
+  color: #2F3A36;
+}
+.header-indhold{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+.header-logo{
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  min-height: 3.75rem;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #2F3A36;
+}
+.header-logo img{
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+}
+.header-tilpas{
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: #2F3A36;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.header-tilpas:hover{
+  text-decoration: underline;
+}
+.header-tilpas:focus-visible{
+  outline: 2px solid #2F3A36;
+  outline-offset: 0.15rem;
+}
+.header-tilpas img{
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+}
+.header-nav{
+  grid-column: 1 /-1;
+  grid-row: 2;
+  padding: 0.5rem 0.25rem 0.9rem;
+  background-color: #F7F5F0;
+}
+.header-nav ul{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.header-nav a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.5rem;
+  color: #2F3A36;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+}
+/* den aktive side */
+.header-nav a:hover,
+.header-nav a[aria-current="page"]{
+  background-color: #d0dfd0;
+}
+.header-nav a[aria-current="page"]{
+  font-weight: 800;
+}
+.sideheader :focus-visible{
+  outline: 0.15rem solid #2F3A36;
+  outline-offset: 0.15rem;
+}
+@media screen and (min-width: 768px){
+  .header-indhold, .header-nav ul{
+    padding-left: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .header-logo{
+    font-size: 1.5rem;
+  }
+  .header-nav ul{
+    max-width: 50rem;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+}
+/* HEADER SLUT */
 
 
 /* generel styling */
@@ -646,3 +757,100 @@ a:focus-visible{
   }
 }
 /* Om NURO SLUT */
+
+/* FOOTER */
+.sidefooter{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 1.25rem 1rem;
+  background-color: #A3B8C9;
+  color: #2F3A36;
+}
+.sidefooter h3{
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.sidefooter p{
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.sidefooter a{
+  color: #2F3A36;
+}
+.footer-logo{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.footer-logo img{
+  display: block;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.footer-nuroslogan{
+  display: block;
+}
+.footer-nav ul{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-nav a{
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.sidefooter .footer-kontakt{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  background-color: #F7F5F0;
+  color: #2F3A36;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-decoration: none;
+  min-height: 4rem;
+  padding: 1rem 1.50rem;
+}
+.footer-kontakt img{
+  display: block;
+  width: 1.75rem;
+  height: auto;
+  flex-shrink: 0;
+}
+.sidefooter .footer-bund{
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid #809AAC;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 768px){
+  .sidefooter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .footer-nav ul{
+    grid-template-columns: 1fr;
+  }
+}
+/* FOOTER */
